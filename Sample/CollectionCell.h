@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CollectionCell.h
 //  Sample
 //
 //  Created by murugan on 28/11/16.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CollectionCell : UICollectionViewCell
 
 
-- (IBAction)btnHome:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *imgUser;
 @end
-

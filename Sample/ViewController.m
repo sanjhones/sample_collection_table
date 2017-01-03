@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        //load your data here.
+        dispatch_async(dispatch_get_main_queue(), ^{
+          self.navigationItem.title=@"Heading Display";
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)btnHome:(id)sender {
+    
+    ListViewController *lv=[[Common storyboard]instantiateViewControllerWithIdentifier:@"ListViewController"];
+    [self.navigationController pushViewController:lv animated:YES];
+    
+}
 @end
